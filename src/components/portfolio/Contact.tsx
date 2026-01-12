@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, PenLine } from "lucide-react";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -9,7 +9,7 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: Github, label: "GitHub", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
+    { icon: PenLine, label: "Blog", href: "#blog" },
     { icon: Mail, label: "Email", href: "mailto:hello@example.com" },
   ];
 
