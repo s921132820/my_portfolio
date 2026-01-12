@@ -12,41 +12,60 @@ const About = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
+        className="grid md:grid-cols-2 gap-16 items-center"
       >
-        <h2 className="font-mono text-primary text-sm mb-2">01.</h2>
-        <h3 className="text-3xl md:text-4xl font-bold mb-8">About Me</h3>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="md:col-span-2 space-y-4 text-muted-foreground">
+        <div>
+          <p className="font-mono text-sm uppercase tracking-[0.2em] text-primary mb-4">
+            — About Me
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
+            Passionate about
+            <br />
+            <span className="italic">timeless design</span>
+          </h2>
+          
+          <div className="w-16 h-0.5 bg-primary mb-8" />
+          
+          <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              안녕하세요! 저는 4년차 프론트엔드 개발자입니다. 
-              복잡한 문제를 단순하고 아름다운 인터페이스로 해결하는 것을 좋아합니다.
+              안녕하세요, 저는 3년차 프론트엔드 개발자입니다. 
+              사용자 중심의 인터페이스를 설계하고, 
+              세련된 웹 경험을 만드는 것에 열정을 가지고 있습니다.
             </p>
             <p>
-              사용자 중심의 개발을 지향하며, 최신 웹 기술 트렌드를 따라가면서도 
-              안정적이고 유지보수하기 쉬운 코드를 작성하기 위해 노력합니다.
-            </p>
-            <p>
-              현재는 React 생태계를 중심으로 개발하고 있으며, 
-              TypeScript와 함께 타입 안전한 코드 작성에 관심이 많습니다.
+              클래식한 디자인 원칙과 현대적인 기술을 조화롭게 
+              결합하여, 시간이 지나도 가치있는 작품을 만들어갑니다.
             </p>
           </div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="aspect-square rounded-lg bg-secondary border border-border overflow-hidden relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-mono text-6xl text-primary/30">{'{ }'}</span>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative"
+        >
+          <div className="aspect-[4/5] bg-card border-2 border-foreground vintage-shadow p-8 flex flex-col justify-center">
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-4xl font-bold text-primary">3+</span>
+                <span className="text-muted-foreground">Years of Experience</span>
+              </div>
+              <div className="w-full h-px bg-border" />
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-4xl font-bold text-primary">20+</span>
+                <span className="text-muted-foreground">Projects Completed</span>
+              </div>
+              <div className="w-full h-px bg-border" />
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-4xl font-bold text-primary">∞</span>
+                <span className="text-muted-foreground">Cups of Coffee</span>
               </div>
             </div>
-            <div className="absolute -inset-1 border border-primary/30 rounded-lg -z-10 translate-x-4 translate-y-4" />
-          </motion.div>
-        </div>
+          </div>
+          {/* Decorative element */}
+          <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary -z-10" />
+        </motion.div>
       </motion.div>
     </section>
   );
