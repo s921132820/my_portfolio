@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Projects = () => {
@@ -15,7 +15,6 @@ const Projects = () => {
       tech: ["React", "TypeScript", "Tailwind CSS", "Zustand"],
       color: "from-cyan-500/20 to-blue-500/20",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      github: "#",
       live: "#",
     },
     {
@@ -24,7 +23,6 @@ const Projects = () => {
       tech: ["Next.js", "D3.js", "Framer Motion", "PostgreSQL"],
       color: "from-emerald-500/20 to-teal-500/20",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      github: "#",
       live: "#",
     },
     {
@@ -33,7 +31,6 @@ const Projects = () => {
       tech: ["React", "Firebase", "Socket.io", "Redux"],
       color: "from-violet-500/20 to-purple-500/20",
       image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-      github: "#",
       live: "#",
     },
   ];
@@ -82,12 +79,6 @@ const Projects = () => {
                         ))}
                       </div>
                       <div className="flex items-center gap-3 pt-4">
-                        <Button asChild variant="outline" size="sm">
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-4 h-4 mr-2" />
-                            GitHub
-                          </a>
-                        </Button>
                         <Button asChild size="sm">
                           <a href={project.live} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="w-4 h-4 mr-2" />
