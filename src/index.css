@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Serif+4:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,43 +6,42 @@
 
 @layer base {
   :root {
-    --background: 35 30% 96%;
-    --foreground: 30 20% 15%;
+    --background: 220 20% 4%;
+    --foreground: 210 20% 95%;
 
-    --card: 35 35% 92%;
-    --card-foreground: 30 20% 15%;
+    --card: 220 20% 7%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 35 35% 92%;
-    --popover-foreground: 30 20% 15%;
+    --popover: 220 20% 7%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 25 70% 45%;
-    --primary-foreground: 35 30% 96%;
+    --primary: 175 80% 50%;
+    --primary-foreground: 220 20% 4%;
 
-    --secondary: 35 25% 85%;
-    --secondary-foreground: 30 20% 20%;
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 210 20% 95%;
 
-    --muted: 35 20% 88%;
-    --muted-foreground: 30 15% 45%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 25 70% 45%;
-    --accent-foreground: 35 30% 96%;
+    --accent: 175 80% 50%;
+    --accent-foreground: 220 20% 4%;
 
-    --destructive: 0 65% 50%;
-    --destructive-foreground: 35 30% 96%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 30 20% 80%;
-    --input: 30 20% 80%;
-    --ring: 25 70% 45%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 175 80% 50%;
 
-    --radius: 0.25rem;
+    --radius: 0.75rem;
 
-    --font-serif: 'Playfair Display', serif;
-    --font-body: 'Source Serif 4', serif;
-    --font-mono: 'Space Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 
-    --gradient-accent: linear-gradient(135deg, hsl(25 70% 45%), hsl(35 60% 55%));
-    --gradient-subtle: linear-gradient(180deg, hsl(35 35% 92%), hsl(35 30% 96%));
-    --shadow-vintage: 4px 4px 0px hsl(30 20% 70%);
+    --gradient-accent: linear-gradient(135deg, hsl(175 80% 50%), hsl(200 80% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 20% 7%), hsl(220 20% 4%));
+    --shadow-glow: 0 0 40px hsl(175 80% 50% / 0.15);
   }
 }
 
@@ -56,12 +55,8 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: var(--font-body);
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
   }
 
   .font-mono {
@@ -76,34 +71,21 @@
   }
 
   .section-container {
-    @apply max-w-4xl mx-auto px-8 py-20;
+    @apply max-w-5xl mx-auto px-6 py-24;
   }
 
   .card-hover {
-    @apply transition-all duration-200;
+    @apply transition-all duration-300 hover:border-primary/50 hover:shadow-lg;
     &:hover {
-      box-shadow: var(--shadow-vintage);
-      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-glow);
     }
   }
 
   .nav-link {
-    @apply text-muted-foreground hover:text-primary transition-colors duration-200 font-mono text-sm uppercase tracking-wider;
+    @apply text-muted-foreground hover:text-primary transition-colors duration-200 font-mono text-sm;
   }
 
   .skill-tag {
-    @apply px-4 py-2 bg-secondary text-secondary-foreground font-mono text-sm border-2 border-foreground;
-  }
-
-  .vintage-border {
-    @apply border-2 border-foreground;
-  }
-
-  .vintage-shadow {
-    box-shadow: var(--shadow-vintage);
-  }
-
-  .decorative-line {
-    @apply w-16 h-0.5 bg-primary;
+    @apply px-4 py-2 rounded-full bg-secondary text-foreground font-mono text-sm border border-border;
   }
 }

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -10,71 +10,55 @@ const Contact = () => {
   const socialLinks = [
     { icon: Github, label: "GitHub", href: "#" },
     { icon: Linkedin, label: "LinkedIn", href: "#" },
-    { icon: Mail, label: "Email", href: "mailto:your@email.com" },
+    { icon: Mail, label: "Email", href: "mailto:hello@example.com" },
   ];
 
   return (
-    <section id="contact" className="section-container" ref={ref}>
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        className="max-w-2xl mx-auto text-center"
-      >
-        <p className="font-mono text-sm uppercase tracking-[0.2em] text-primary mb-4">
-          — Contact
-        </p>
-        <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-          Let's Work <span className="italic">Together</span>
-        </h2>
-        <div className="w-16 h-0.5 bg-primary mx-auto mb-8" />
-
-        <p className="text-muted-foreground text-lg leading-relaxed mb-12">
-          새로운 프로젝트나 협업에 관심이 있으시다면
-          <br />
-          언제든지 연락해 주세요.
-        </p>
-
-        <motion.a
-          href="mailto:your@email.com"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="inline-flex items-center gap-3 px-10 py-4 bg-foreground text-background font-mono text-sm uppercase tracking-wider vintage-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform mb-16"
-        >
-          <Mail className="w-5 h-5" />
-          Send a Message
-        </motion.a>
-
+    <section id="contact" className="bg-card/50" ref={ref}>
+      <div className="section-container text-center">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
-            Or find me on
+          <h2 className="font-mono text-primary text-sm mb-2">04.</h2>
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h3>
+          
+          <p className="text-muted-foreground max-w-lg mx-auto mb-8">
+            새로운 기회나 협업에 대한 제안을 환영합니다.
+            <br />
+            언제든지 연락 주세요!
           </p>
-          <div className="flex items-center justify-center gap-8">
-            {socialLinks.map((link, index) => (
-              <motion.a
+          
+          <motion.a
+            href="mailto:hello@example.com"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-block px-10 py-4 bg-primary text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity mb-12"
+          >
+            이메일 보내기
+          </motion.a>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex items-center justify-center gap-6"
+          >
+            {socialLinks.map((link) => (
+              <a
                 key={link.label}
                 href={link.href}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
-                className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                className="p-3 text-muted-foreground hover:text-primary transition-colors"
                 aria-label={link.label}
               >
-                <link.icon className="w-5 h-5" />
-                <span className="font-mono text-sm uppercase tracking-wider">
-                  {link.label}
-                </span>
-                <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </motion.a>
+                <link.icon className="w-6 h-6" />
+              </a>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };
