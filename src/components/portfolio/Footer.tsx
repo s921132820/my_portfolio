@@ -1,15 +1,25 @@
+import { motion } from "framer-motion";
+
 const Footer = () => {
   return (
-    <footer className="py-8 border-t border-border">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <p className="font-mono text-sm text-muted-foreground">
-          Designed & Built with <span className="text-primary">♥</span>
-        </p>
-        <p className="font-mono text-xs text-muted-foreground/60 mt-2">
-          © 2024 All Rights Reserved
-        </p>
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="border-t-2 border-foreground bg-background"
+    >
+      <div className="max-w-4xl mx-auto px-8 py-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="font-serif text-lg font-bold text-foreground">
+            Portfolio
+          </p>
+          <p className="font-mono text-sm text-muted-foreground">
+            © 2024 — Designed & Built with Care
+          </p>
+        </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
