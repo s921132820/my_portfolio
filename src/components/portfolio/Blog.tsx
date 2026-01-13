@@ -4,28 +4,28 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 const Blog = () => {
   const posts = [
     {
-      title: "React 18의 새로운 기능들: Concurrent Features 완벽 가이드",
-      excerpt: "React 18에서 도입된 Concurrent Features의 핵심 개념과 실무 적용 방법을 알아봅니다.",
-      date: "2024.01.15",
-      readTime: "8분",
+      title: "프론트엔드 개발자가 알아야 할 회원가입 시 이메일 대소문자 처리 기준",
+      excerpt: "회원가입 시 이메일 대소문자 처리 기준을 알아봅니다.",
+      date: "2025.12.24",
+      readTime: "5분",
       tags: ["React", "JavaScript"],
-      link: "#",
+      link: "https://itconquest.tistory.com/entry/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EC%8B%9C-%EC%9D%B4%EB%A9%94%EC%9D%BC-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EC%B2%98%EB%A6%AC-%EA%B8%B0%EC%A4%80",
     },
     {
-      title: "TypeScript 제네릭 마스터하기",
-      excerpt: "복잡한 타입 시스템을 다루기 위한 제네릭의 고급 패턴과 실전 예제를 소개합니다.",
-      date: "2024.01.08",
-      readTime: "12분",
-      tags: ["TypeScript", "JavaScript"],
-      link: "#",
+      title: "React Server Components(RSC) 보안 취약점 발견 및 공식 패치 발표 정리",
+      excerpt: "React Server Components(RSC) 보안 취약점 발견 및 공식 패치 발표 정리를 알아봅니다.",
+      date: "2025.12.09",
+      readTime: "5분",
+      tags: ["TypeScript", "React"],
+      link: "https://itconquest.tistory.com/entry/React-Server-Components-RSC-%EB%B3%B4%EC%95%88-%EC%B7%A8%EC%95%BD%EC%A0%90-%EB%B0%9C%EA%B2%AC-%EB%B0%8F-%EA%B3%B5%EC%8B%9D-%ED%8C%A8%EC%B9%98-%EB%B0%9C%ED%91%9C-%EC%A0%95%EB%A6%AC-2025",
     },
     {
-      title: "프론트엔드 성능 최적화: Core Web Vitals 개선하기",
-      excerpt: "LCP, FID, CLS를 개선하여 사용자 경험을 향상시키는 실전 테크닉을 공유합니다.",
-      date: "2023.12.20",
-      readTime: "10분",
-      tags: ["Performance", "Web"],
-      link: "#",
+      title: "TypeScript 초보를 위한 CFA 설명: null 체크부터 Discriminated Union까지",
+      excerpt: "TypeScript 초보를 위한 CFA 설명: null 체크부터 Discriminated Union까지를 알아봅니다.",
+      date: "2025.09.05",
+      readTime: "5분",
+      tags: ["TypeScript"],
+      link: "https://itconquest.tistory.com/entry/TypeScript-%EC%B4%88%EB%B3%B4%EB%A5%BC-%EC%9C%84%ED%95%9C-CFA-%EC%84%A4%EB%AA%85-null-%EC%B2%B4%ED%81%AC%EB%B6%80%ED%84%B0-Discriminated-Union%EA%B9%8C%EC%A7%80",
     },
   ];
 
@@ -59,6 +59,8 @@ const Blog = () => {
             >
               <a
                 href={post.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block p-6 rounded-lg border border-border bg-card hover:border-primary/50 transition-all duration-300"
               >
                 <div className="flex flex-col md:flex-row md:items-center gap-4">
@@ -110,7 +112,7 @@ const Blog = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary hover:underline font-mono text-sm"
           >
-            모든 글 보기
+            블로그 바로가기
             <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>

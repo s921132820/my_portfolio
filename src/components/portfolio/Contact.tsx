@@ -8,9 +8,9 @@ const Contact = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", href: "#" },
-    { icon: PenLine, label: "Blog", href: "#blog" },
-    { icon: Mail, label: "Email", href: "mailto:hello@example.com" },
+    { icon: Github, label: "GitHub", href: "https://github.com/s921132820/" },
+    { icon: PenLine, label: "Blog", href: "https://itconquest.tistory.com/" },
+    { icon: Mail, label: "Email", href: "mailto:s92113282@gmail.com" },
   ];
 
   return (
@@ -31,7 +31,7 @@ const Contact = () => {
           </p>
           
           <motion.a
-            href="mailto:hello@example.com"
+            href="mailto:s92113282@gmail.com"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -50,6 +50,8 @@ const Contact = () => {
               <a
                 key={link.label}
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 text-muted-foreground hover:text-primary transition-colors"
                 aria-label={link.label}
               >

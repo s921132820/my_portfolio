@@ -12,39 +12,41 @@ const Projects = () => {
     {
       title: "WP 테마 개발 (약 70개 테마)",
       description: "다양한 산업 분야의 워드프레스 테마를 개발했습니다. 반응형 디자인과 최적화된 성능을 갖춘 커스터마이징 가능한 테마들을 제작했습니다.",
-      tech: ["php", "JavaScript", "CSS"],
+      tech: ["php", "wordpress", "JavaScript", "CSS"],
       color: "from-cyan-500/20 to-blue-500/20",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      live: "#",
+      image: "/images/thumb-3.png",
+      live: "https://agwwmscog.org/",
       featuredThemes: [
         {
-          title: "비즈니스 테마",
-          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-          description: "기업형 웹사이트를 위한 전문적인 테마"
+          title: "연합회 홈페이지",
+          image: "/images/thumb-1.png",
+          description: "국내 연합회 홈페이지",
+          live: "https://seawmscog.org/"
         },
         {
-          title: "이커머스 테마",
-          image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
-          description: "온라인 쇼핑몰을 위한 최적화된 테마"
+          title: "국가 홈페이지",
+          image: "/images/thumb-2.png",
+          description: "국가별로 제작된 홈페이지 테마",
+          live: "#"
         },
       ],
     },
     {
-      title: "플랫폼 개발",
-      description: "다양한 플랫폼을 개발했습니다. 실시간 데이터 시각화, 대시보드, 관리자 시스템 등 사용자 경험을 중시한 플랫폼들을 구축했습니다.",
-      tech: ["React", "TypeScript"],
+      title: "리로케이션 플랫폼 개발",
+      description: "리로케이션 플랫폼을 개발했습니다. 실시간 데이터 시각화, 대시보드, 관리자 시스템 등 사용자 경험을 중시한 플랫폼을 구축했습니다.",
+      tech: ["React", "TypeScript", "mySql"],
       color: "from-emerald-500/20 to-teal-500/20",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      live: "#",
+      image: "/images/thumb-4.png",
+      live: "https://softlanders.com/",
       featuredThemes: [
         {
-          title: "대시보드 플랫폼",
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+          title: "역할별 대시보드 플랫폼",
+          image: "/images/thumb-6.png",
           description: "실시간 데이터 시각화 대시보드"
         },
         {
           title: "관리자 시스템",
-          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+          image: "/images/thumb-5.png",
           description: "효율적인 데이터 관리 시스템"
         },
       ],
@@ -103,7 +105,7 @@ const Projects = () => {
                             {project.featuredThemes.map((theme, themeIndex) => (
                               <div
                                 key={themeIndex}
-                                className="group/theme relative overflow-hidden rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-all duration-300"
+                                className="group/theme relative overflow-hidden rounded-lg border border-border bg-card/50 hover:border-teal-500/50 transition-all duration-300"
                               >
                                 <div className="aspect-video relative overflow-hidden">
                                   <img
@@ -113,28 +115,29 @@ const Projects = () => {
                                   />
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover/theme:opacity-100 transition-opacity duration-300" />
                                 </div>
-                                <div className="p-3 space-y-1">
-                                  <h5 className="text-sm font-semibold text-foreground">
-                                    {theme.title}
-                                  </h5>
-                                  <p className="text-xs text-muted-foreground line-clamp-2">
-                                    {theme.description}
-                                  </p>
+                                <div className="p-3 space-y-2">
+                                  <div className="space-y-1">
+                                    <h5 className="text-sm font-semibold text-foreground">
+                                      {theme.title}
+                                    </h5>
+                                    <p className="text-xs text-muted-foreground line-clamp-2">
+                                      {theme.description}
+                                    </p>
+                                  </div>
+                                  {theme.live && (
+                                    <Button asChild size="sm">
+                                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                                        <ExternalLink className="w-4 h-4 mr-2" />
+                                        바로가기
+                                      </a>
+                                    </Button>
+                                  )}
                                 </div>
                               </div>
                             ))}
                           </div>
                         </div>
                       )}
-                      
-                      <div className="flex items-center gap-3 pt-4">
-                        <Button asChild size="sm">
-                          <a href={project.live} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            바로가기
-                          </a>
-                        </Button>
-                      </div>
                     </div>
                     
                     {/* Image */}
