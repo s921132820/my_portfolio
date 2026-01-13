@@ -49,12 +49,6 @@ const Hero = () => {
           >
             프로젝트 보기
           </a>
-          <a
-            href="#contact"
-            className="px-8 py-3 border border-border text-foreground font-medium rounded-lg hover:border-primary/50 transition-colors"
-          >
-            연락하기
-          </a>
         </motion.div>
       </div>
       

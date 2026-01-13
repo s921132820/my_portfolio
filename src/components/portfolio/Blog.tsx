@@ -105,7 +105,9 @@ const Blog = () => {
           className="mt-8 text-center"
         >
           <a
-            href="#"
+            href="https://itconquest.tistory.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary hover:underline font-mono text-sm"
           >
             모든 글 보기
