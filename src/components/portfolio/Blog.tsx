@@ -37,14 +37,12 @@ const Blog = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">
-            <span className="text-primary font-mono">04.</span> 기술 블로그
-          </h2>
-          <p className="text-muted-foreground">
-            개발하면서 배운 것들을 기록하고 공유합니다.
-          </p>
+          <h2 className="font-mono text-primary text-sm mb-2">기술 블로그</h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-12">
+              개발하면서 배운 것들을 기록하고 공유합니다
+            </h3>
         </motion.div>
 
         <div className="grid gap-6">

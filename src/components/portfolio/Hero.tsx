@@ -14,7 +14,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="font-mono text-primary mb-4"
         >
-          안녕하세요, 저는
+          안녕하세요
         </motion.p>
         
         <motion.h1
@@ -23,7 +23,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold mb-6"
         >
-          <span className="text-gradient">Frontend Developer</span>
+          <span className="text-gradient">안녕하세요<br / >프론트엔드 개발자<br />박세희입니다</span>
         </motion.h1>
         
         <motion.p
@@ -47,7 +47,7 @@ const Hero = () => {
             href="#projects"
             className="px-8 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-opacity"
           >
-            프로젝트 보기
+            이력서 다운로드 받기
           </a>
         </motion.div>
       </div>
@@ -58,12 +58,6 @@ const Hero = () => {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <ArrowDown className="w-6 h-6 text-muted-foreground" />
-        </motion.div>
       </motion.div>
     </section>
   );

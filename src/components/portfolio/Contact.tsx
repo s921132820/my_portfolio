@@ -21,8 +21,8 @@ const Contact = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-mono text-primary text-sm mb-2">05.</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h3>
+          <h2 className="font-mono text-primary text-sm mb-2">연락하기</h2>
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">새로운 기회나 협업에 대한 제안을 환영합니다</h3>
           
           <p className="text-muted-foreground max-w-lg mx-auto mb-8">
             새로운 기회나 협업에 대한 제안을 환영합니다.

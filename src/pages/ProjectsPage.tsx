@@ -98,6 +98,22 @@ const ProjectsPage = () => {
                                         {theme.description}
                                       </p>
                                     </div>
+                                    {theme.live && theme.live !== "#" && (
+                                      <Button
+                                        asChild
+                                        size="sm"
+                                        className="w-full bg-teal-500 hover:bg-teal-600 text-white border-teal-500"
+                                      >
+                                        <a
+                                          href={theme.live}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                        >
+                                          <ExternalLink className="w-3 h-3 mr-1.5" />
+                                          사이트 보기
+                                        </a>
+                                      </Button>
+                                    )}
                                   </div>
                                 </div>
                               ))}

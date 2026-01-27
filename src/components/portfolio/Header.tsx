@@ -1,29 +1,49 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   
   const navItems = [
-    { label: "about", href: "/about" },
-    { label: "skills", href: "/skills" },
-    { label: "projects", href: "/projects" },
-    { label: "blog", href: "/blog" },
-    { label: "contact", href: "/contact" },
+    { label: "소개", href: "/about", sectionId: "about" },
+    { label: "기술", href: "/skills", sectionId: "skills" },
+    { label: "프로젝트", href: "/projects", sectionId: "projects" },
+    { label: "블로그", href: "/blog", sectionId: "blog" },
+    { label: "연락하기", href: "/contact", sectionId: "contact" },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, sectionId?: string) => {
+    if (location.pathname === "/" && sectionId) {
+      e.preventDefault();
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else if (location.pathname !== "/") {
+      e.preventDefault();
+      navigate(href);
+      // 다른 페이지에서 Index로 이동한 후 섹션으로 스크롤
+      setTimeout(() => {
+        if (sectionId) {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      }, 100);
+    }
+  };
 
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border max-w-5xl mx-auto"
     >
-      <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-mono text-lg font-semibold text-primary">
-          {"<FW developer />"}
-        </Link>
+      <nav className="px-6 py-4 flex items-center justify-center">
         <ul className="flex items-center gap-8">
           {navItems.map((item, index) => (
             <motion.li
@@ -32,14 +52,15 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
-              <Link
-                to={item.href}
+              <a
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href, item.sectionId)}
                 className={`nav-link ${
                   location.pathname === item.href ? "text-primary font-medium" : ""
                 }`}
               >
                 {item.label}
-              </Link>
+              </a>
             </motion.li>
           ))}
         </ul>
