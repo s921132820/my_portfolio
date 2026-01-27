@@ -215,7 +215,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="text-blue-500 hover:underline"
                       >
-                        사이트
+                        사이트 바로가기
                       </a>
                     )}
                     {selectedProject.links.github && (
