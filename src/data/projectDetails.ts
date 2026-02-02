@@ -23,10 +23,10 @@ export const projectDetails: ProjectDetail[] = [
     id: "relocation-platform",
     icon: "🔵", // 파란색 별/스타 아이콘
     title: "리로케이션 플랫폼 개발",
-    description: "기획부터 DB 설계, 디자인, 프론트엔드 개발까지 전 과정을 주도한 리로케이션 플랫폼",
-    tech: ["React", "TypeScript", "Zustand", "MySQL", "WordPress"],
-    participants: "1명",
-    period: "2024.12~",
+    description: "기획부터 DB 설계, 디자인, 프론트엔드 개발까지 전 과정을 주도한 리로케이션 플랫폼이며, 실제 출시하여 실서비스 운영 중입니다.",
+    tech: ["React", "TypeScript", "Zustand", "MySQL"],
+    participants: "3명",
+    period: "2025.03~",
     links: {
       site: "https://softlanders.com/",
     },
@@ -63,8 +63,8 @@ export const projectDetails: ProjectDetail[] = [
     title: "WP 테마 개발 (약 70개 테마)",
     description: "다양한 산업 분야의 워드프레스 테마를 개발했습니다. 반응형 디자인과 최적화된 성능을 갖춘 커스터마이징 가능한 테마들을 제작했습니다.",
     tech: ["PHP", "WordPress", "JavaScript", "CSS"],
-    participants: "1명",
-    period: "2018~2025",
+    participants: "5명",
+    period: "2018.01~2025.02",
     links: {
       site: "https://agwwmscog.org/",
     },
@@ -100,7 +100,7 @@ export const projectDetails: ProjectDetail[] = [
     description: "Next.js App router를 활용하여 SSG 방식으로 제작한 포트폴리오 웹사이트",
     tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Figma"],
     participants: "1명",
-    period: "2024.12~",
+    period: "2026.01~",
     links: {
       site: "#",
       github: "https://github.com/s921132820/",

@@ -15,7 +15,7 @@ const About = () => {
         className="text-center"
       >
         <h2 className="font-mono text-primary text-sm mb-2">소개</h2>
-        <h3 className="text-3xl md:text-4xl font-bold mb-8">유연하게 소통하고 견고하게 개발합니다</h3>
+        <h3 className="text-3xl md:text-4xl font-bold mb-8">웹디자인부터 개발까지 전 과정을 경험했습니다</h3>
         
         <div className="max-w-3xl mx-auto space-y-4 text-muted-foreground">
           <p>
